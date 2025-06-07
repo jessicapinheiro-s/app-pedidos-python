@@ -1,4 +1,5 @@
-from restauranteAvaliacao import Avaliacao;
+from restauranteAvaliacao import Avaliacao
+
 
 class Pedido:
     comidas_dispo = [
@@ -42,55 +43,58 @@ class Pedido:
             'disponivel': True,
             'valor': 8.50
         }
-    ];
+    ]
 
     def __init__(self):
-        self.mostrar_opcoes();
-        self.receber_opcao();
-        
+        self.mostrar_opcoes()
+        self.receber_opcao()
+
     def ativo(prop_value):
-        if(prop_value == True):
-            return;
-        
+        if (prop_value == True):
+            return
+
     def apenas_disponiveis(arr_comidas):
-        if(arr_comidas):
-            apenas_comidas_disponiveis = filter(arr_comidas, ativo);
-            return apenas_comidas_disponiveis;
+        if (arr_comidas):
+            apenas_comidas_disponiveis = filter(arr_comidas, ativo)
+            return apenas_comidas_disponiveis
         else:
-            return [];
-    
+            return []
+
     def mostrar_opcoes(self):
-        print('Menu: \n');
-        
-        if(apenas_disponiveis(comidas_dispo).length > 0):
-            opcoes_output_for_user = '';
-            
+        print('Menu: \n')
+
+        if (apenas_disponiveis(comidas_dispo).length > 0):
+            opcoes_output_for_user = ''
+
             for item_menu in apenas_disponiveis(comidas_dispo):
-                opcoes_output_for_user += f"| {item_menu['nome']} | {item_menu['valor']}\n";
-                
+                opcoes_output_for_user += f"| {item_menu['nome']} | {item_menu['valor']}\n"
+
             print("""
                     | Comida         | Bebida    | 
                     |----------------|-----------|
-            """ + opcoes_output_for_user);
+            """ + opcoes_output_for_user)
         else:
-            print("Não há itens Disponiveis no Cardapio");
-        
-        
-        
-    
-    #@property
-    #def disponivel(self):
-    #   return 'Sim' if self.disponivel else 'Não'; 
-    
-    def receber_opcao(self): 
+            print("Não há itens Disponiveis no Cardapio")
+
+    def receber_opcao(self):
         pedido = {
             "comida": '',
             "bebida": ''
-        };
-        self.pedido['comida'] = str(input('Digite o nome do Hamburguer')).lower();
-        self.pedido['bebida'] = str(input('Digite o nome da Bebida')).lower();
-        print('Pedido Feito, Obrigado!');
-        
-    
-        
-Pedido();
+        }
+        self.pedido['comida'] = str(
+            input('Digite o nome do Hamburguer')).lower()
+        self.pedido['bebida'] = str(input('Digite o nome da Bebida')).lower()
+        print('Pedido Feito, Obrigado!')
+
+    def avaliar_pedido(self):
+        se_avaliar = str(
+            input("""
+                    Você gostaria de avaliar o seu pedido?
+                    Sim - Não
+                """));
+        if(se_avaliar == 'Sim'):
+            avaliacao = Avaliacao();
+            nota_avalicao = input('Defina uma nota para a Avaliação: ');
+            
+
+Pedido()
