@@ -1,7 +1,7 @@
 from restauranteAvaliacao import Avaliacao
 
 
-class Pedido:
+class Pedido(IngredientesPedido):
     comidas_dispo = [
         {
             'nome': 'Bullguer Salad',
