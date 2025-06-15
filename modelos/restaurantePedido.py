@@ -1,5 +1,5 @@
-from restauranteAvaliacao import Avaliacao
-
+from restauranteAvaliacao import Avaliacao;
+from ingredientesPedido import IngredientesPedido;
 
 class Pedido(IngredientesPedido):
     comidas_dispo = [
@@ -46,8 +46,10 @@ class Pedido(IngredientesPedido):
     ]
 
     def __init__(self):
-        self.mostrar_opcoes()
-        self.receber_opcao()
+        self.mostrar_opcoes();
+        self.receber_opcao();
+        super().__init__(self.comidas_dispo[0]['nome']);
+
 
     def ativo(prop_value):
         if (prop_value == True):

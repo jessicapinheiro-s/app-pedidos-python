@@ -83,10 +83,11 @@ class IngredientesPedido:
             ]
         }
     ];
+    ingredientes_selected = null;
 
     def __init__(self, elemento_comida):
         self.elemento_comida = elemento_comida;
-        self.get_ingredients(self.elemento_comida);
+        this.ingredientes_selected = get_ingredients(self.elemento_comida);
 
     def filter_ingredientes_item(self, nome):
         resultado = list(filter(lambda item: item['nome'] == nome, ingredientes_pedido))
